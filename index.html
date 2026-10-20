@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Physical Computing Fall 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {
+  font-family: "Poppins", sans-serif
+  }
+body {
+  font-size:16px;
+  }
+h1 { 
+  font-size:30px;
+  }
+h2 {
+  font-size:25px;
+  }
+  h3 {
+  font-size:18px;
+  }
+img {
+  max-width: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin: 16px 0 24px 0;
+}
+.grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  background: #f1f1f1;
+  border-radius: 0;
+  opacity: 0.9;
+  cursor: pointer;
+  display: block;
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+.grid img:hover {
+  opacity: 1;
+}
+#img01 {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+#ProjectConcept > img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-display-topleft" style="display:none;font-size:22px"></a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>IXD<br>DESN 30146<br>Fall 2026</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#Home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#Module1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Module 1</a> 
+    <a href="#Activity1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity 1</a> 
+    <a href="#Activity2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity 2</a>
+    <a href="#Activity3" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity 3</a>
+    <a href="#ResearchActivity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Research Activity</a>
+    <a href="#ProjectConcept" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Project Concept</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens
+<header class="w3-container w3-top w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Menu</span>
+</header> -->
+
+<!-- 
+  if you want to link your image to a video use one of the following alt links as an example:
+
+  alt="test1Lorem ipsum dolor sit amet, consectetur adipiscing elit test1Lorem ipsum dolor sit amet, consectetur adipiscing elit <a href='https://www.youtube.com/embed/tgbNymZ7vqY' target='_blank'><p>Project Video Link</p></a>"> 
+  alt="test2Lorem ipsum dolor sit amet, consectetur adipiscing elit <div class='container'><iframe class='responsive-iframe' src='https://www.youtube.com/embed/tgbNymZ7vqY'></iframe></div>">
+
+-->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:220px;margin-right:20px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="default">
+    <h1 class="w3-jumbo" id="Home"><b>Physical Computing</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue"><b>Weekly Activity Template</b></h1>
+      <h1 class="w3-xxxlarge w3-text-blue"><b>Ovia Krishnasamy Muthaly Fall 2026</b></h1>
+    <hr style="width:50px;border:5px solid grey" class="w3-round">
+  </div>
+  <!-- Boilerplate -->
+  <div id="Module1" class="w3-container" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Module 1</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <h2>Activity Research</h2>
+    <h3>Module 1 Activities
+    </h3>
+  </div>
+  
+  <!-- Project 1 Photo grid (modal) -->
+  <div id="Activity1" >
+    <h2>Activity 1</h2>
+    <div class="grid">
+      <img src="images/Activity1/1.png" style="width:100%" onclick="onClick(this)" alt=" I set up the Ardunino to my computer "> 
+      <img src="images/Activity1/3.png" style="width:100%" onclick="onClick(this)" alt="I hooked up an LED light to the blink code">
+      <img src="images/Activity1/2.png" style="width:100%" onclick="onClick(this)" alt="I tested the blink code with an LED light and it worked">
+      <img src="images/Activity1/4.png" style="width:100%" onclick="onClick(this)" alt="I tested the blink code with just the Arduino and it worked">
+      <img src="images/Activity1/5.gif" style="width:100%" onclick="onClick(this)" alt="I tested the blink code (GIF image)">
+    </div>
+  </div>
+  
+  <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round"></hr>
+
+  <div id="Activity2" class="w3-row-padding">
+    <h2>Activity 2</h2>
+    <div class="grid">
+      <img src="images/Activity2/1.png" style="width:100%" onclick="onClick(this)" alt="I opened the ProtoPie Connect temperature and humidity sketch in the Arduino IDE with the Arduino Sensor Kit plugged in over USB, and the code compiled successfully">
+      <img src="images/Activity2/2.gif" style="width:100%" onclick="onClick(this)" alt="Screen recording of the Arduino IDE serial monitor printing temperature, humidity and degree values as the sensor kit sends them (GIF image)">
+      <img src="images/Activity2/3.png" style="width:100%" onclick="onClick(this)" alt="ProtoPie Connect receiving the Arduino's serial messages (temp, humidity and degree) from the USB port, which confirmed the data was reaching ProtoPie">
+      <img src="images/Activity2/4.PNG" style="width:100%" onclick="onClick(this)" alt="The ProtoPie living room thermostat prototype before any data arrived, with temperature and humidity both reading 0">
+      <img src="images/Activity2/5.gif" style="width:100%" onclick="onClick(this)" alt="The thermostat prototype running on my phone: turning the potentiometer on the sensor kit changes the target temperature while the room temperature and humidity update live (GIF image)">
+    </div>
+  </div>
+
+  <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round"></hr>
+
+  <div id="Activity3" class="w3-row-padding">
+    <h2>Activity 3</h2>
+    <div class="grid">
+      <img src="images/Activity3/1.png" style="width:100%" onclick="onClick(this)" alt="I built a first TouchDesigner network (movie file in, displace, noise and a CHOP) to learn how nodes pass data to each other and drive a textured 3D cube">
+      <img src="images/Activity3/2.png" style="width:100%" onclick="onClick(this)" alt="I wrote an Arduino sketch that reads the potentiometer on pin A0, maps 0-1023 to 0-100 and prints it to the serial monitor so TouchDesigner can read it">
+      <img src="images/Activity3/3.png" style="width:100%" onclick="onClick(this)" alt="TouchDesigner receiving the potentiometer's serial values and using them to drive the size of a red-orange radial gradient circle">
+      <img src="images/Activity3/4.png" style="width:100%" onclick="onClick(this)" alt="Turning the potentiometer all the way up fills the TouchDesigner frame with orange, showing the sensor value controlling the visual directly">
+      <img src="images/Activity3/5.gif" style="width:100%" onclick="onClick(this)" alt="Turning the potentiometer on the sensor kit makes the visual grow and shrink in real time (GIF image)">
+    </div>
+  </div>
+
+  <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round"></hr>
+
+  <div id="ResearchActivity" class="w3-row-padding">
+    <h2>Research Activity</h2>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <h2>Consumer Trend Research</h2>
+    <h3>Two trends from VML's Future 100 report: the New rave scene and Immersive wellness, both about people wanting connection and awe from live experiences.
+    </h3>
+    <div class="grid">
+      <img src="images/Research/trend1.png" style="width:100%" onclick="onClick(this)" alt="Immersive wellness: people floating in a pool under a projected galaxy of stars and nebula clouds, with visuals covering the ceiling and walls">
+      <img src="images/Research/trend2.png" style="width:100%" onclick="onClick(this)" alt="New rave scene: a DJ raising a hand behind the decks while a crowd watches, with long light trails showing the movement and energy of the room">
+      <img src="images/Research/trend3.png" style="width:100%" onclick="onClick(this)" alt="Immersive wellness: a pool room facing a wall of large purple and blue projected visuals, where sound and light shape the space">
+    </div>
+    <h2>Personas Research</h2>
+    <h3>Two audience profiles from the report: the Connection-Seeker, who wants community, and the Awe-Seeker, who wants to feel something new.
+    </h3>
+    <div class="grid">
+      <img src="images/Research/vml-34.png" style="width:100%" onclick="onClick(this)" alt="VML report, New rave scene (p. 34): the Connection-Seeker's trend, with Longevity Rave as the lead example">
+      <img src="images/Research/vml-35.png" style="width:100%" onclick="onClick(this)" alt="VML report, New rave scene (p. 35): sober day parties and coffee raves, with the 87% statistic on valuing connection">
+      <img src="images/Research/vml-36.png" style="width:100%" onclick="onClick(this)" alt="VML report, Immersive wellness (p. 36): the Awe-Seeker's trend, with the 86% statistic on awe and wonder">
+    </div>
+    <h2>HMI Research</h2>
+    <h3>Four How Might I questions about helping crowds feel connected, helping performers shape a room, and letting people experience sound with more than their ears.
+    </h3>
+    <div class="grid">
+      <img src="images/Research/hmw-formula.png" style="width:100%" onclick="onClick(this)" alt="The How Might We formula from the Interaction Design Foundation: How might we + intended action + for + potential user + so that + desired outcome">
+      <img src="images/Research/hmi-crowd.jpg" style="width:100%" onclick="onClick(this)" alt="Real scenario for the crowd problem: a large crowd faces a stage with a giant visual screen while many people film on their phones (photo: Luis Colato, Nexus Tour)">
+      <img src="images/Research/hmi-performer.jpg" style="width:100%" onclick="onClick(this)" alt="Real scenario for the performer problem: performers work at a laptop and controllers on stage while projected visuals fill the screens behind them">
+    </div>
+    <h2>Project Path</h2>
+    <h3>Art path, working individually, building a TouchDesigner system that turns live music into visuals for concerts and DJ sets.
+    </h3>
+    <div class="grid">
+      <img src="images/Research/path-ref1.jpg" style="width:100%" onclick="onClick(this)" alt="Reference for the visual environment: a club space with large screens and an LED dance floor showing flowing, colourful visuals">
+      <img src="images/Research/path-ref2.png" style="width:100%" onclick="onClick(this)" alt="Reference for the performance setup: a DJ at the decks surrounded by curved LED screens showing fast, colourful visuals">
+      <img src="images/Research/path-vj.jpg" style="width:100%" onclick="onClick(this)" alt="Reference for the setup: two performers at laptops on a small stage in a club, with live-generated waveforms and visuals projected on the walls">
+    </div>
+  </div>
+
+  <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round"></hr>
+
+  <!-- Boilerplate -->
+  <div id="ProjectConcept" class="w3-container" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Project 1 Concept</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <h2>Project 1 Concept</h2>
+    <p>Art path, working individually: a TouchDesigner system that turns live music into projected visuals for concerts and DJ sets.
+    </p>
+    <img src="images/Concept/concept-sketch.png" style="width:100%" onclick="onClick(this)" alt="Concept sketch: live music from a speaker goes into TouchDesigner, which analyzes it and sends projected visuals to a big screen while the crowd watches">
+  </div>
+  
+   <!-- Modal for full size images on click-->
+   <div id="modal01" class="w3-modal w3-grey" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-center w3-transparent" style ="padding:20px">
+      <img id="img01" class="w3-image">
+      <h2 id="caption"></h2>
+
+      <!-- <div id="urLink"></div> -->
+      <!-- <a id="urLink" class="container"><iframe class="responsive-iframe"></iframe></a> -->
+    </div>
+  </div>
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+
+  // var captionUrl = document.getElementById("urLink");
+  // captionUrl.innerHTML = element.url;
+
+  //document.getElementById("urLink").src = element.url;
+}
+</script>
+
+</body>
+</html>
